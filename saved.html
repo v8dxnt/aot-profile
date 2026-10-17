@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saving · Profilr™</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="saved" class="saved-page">
+
+  <header class="topnav">
+    <div class="brand"><span class="logo">P</span> Profilr<sup>™</sup></div>
+  </header>
+
+  <main class="container narrow">
+    <section id="saving-card" class="card center">
+      <h2>Saving…</h2>
+      <p class="muted">Estimated time: <strong>3 years</strong></p>
+      <div class="save-track"><div id="save-fill" class="save-fill"></div></div>
+      <div id="save-pct" class="big-value">0%</div>
+    </section>
+
+    <section id="error-card" class="card center error-card hidden">
+      <div class="teapot">☕</div>
+      <h2>Error 418</h2>
+      <p>Your profile is a teapot ☕. All changes discarded.</p>
+      <p class="rage-final">Final rage: <strong id="final-rage">0%</strong></p>
+      <button id="ok-btn" class="primary-btn" type="button">OK 😊</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

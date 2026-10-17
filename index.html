@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Profile · Profilr™</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="index">
+
+  <!-- 1. Rage-O-Meter -->
+  <div id="rage-bar" class="rage-bar">
+    <div class="rage-label">Rage-O-Meter: <strong id="rage-text">Calm 😌</strong> <span id="rage-pct">0%</span></div>
+    <div class="rage-track"><div id="rage-fill" class="rage-fill"></div></div>
+  </div>
+
+  <header class="topnav">
+    <div class="brand"><span class="logo">P</span> Profilr<sup>™</sup></div>
+    <nav class="nav-links"><a href="#">Home</a><a href="#">Friends</a><a href="#" class="active">Settings</a></nav>
+    <button id="dark-toggle" class="ghost-btn" type="button">🌙 Dark mode</button>
+  </header>
+
+  <main class="container">
+    <div class="page-head">
+      <h1>Edit your profile</h1>
+      <p class="muted">Keep your information up to date. It only takes a minute!*</p>
+    </div>
+
+    <section class="card">
+      <h2>Basic information</h2>
+
+      <!-- 3. Name -->
+      <div class="field">
+        <label for="name-input">Full name</label>
+        <input id="name-input" type="text" readonly placeholder="Use the secure keyboard below 🔐" autocomplete="off">
+        <div id="name-keyboard" class="keyboard" aria-label="Secure keyboard"></div>
+      </div>
+
+      <!-- 4. Email -->
+      <div class="field">
+        <label for="email-input">Email</label>
+        <input id="email-input" type="email" placeholder="you@gmail.com" autocomplete="off">
+        <small id="email-hint" class="hint"></small>
+      </div>
+
+      <div class="grid-2">
+        <!-- 5. Phone -->
+        <div class="field">
+          <label for="phone-slider">Phone number</label>
+          <div id="phone-display" class="big-value">000-000-0000</div>
+          <input id="phone-slider" type="range" min="0" max="9999999999" step="1" value="0">
+          <small class="hint">Slide to your number. Precision is a skill.</small>
+        </div>
+
+        <!-- 6. DOB -->
+        <div class="field">
+          <label>Date of birth</label>
+          <div id="dob-display" class="big-value">—</div>
+          <div class="btn-row">
+            <button id="dob-minus-day" class="small-btn" type="button">−1 day</button>
+            <button id="dob-plus-year" class="small-btn" type="button">+1 year</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Password -->
+    <section class="card">
+      <h2>Security</h2>
+      <div class="field">
+        <label for="password-input">New password</label>
+        <input id="password-input" type="text" placeholder="Create a strong password" autocomplete="off">
+        <div class="strength"><div class="strength-track"><div id="strength-fill" class="strength-fill"></div></div><span id="strength-text">Weak 😬</span></div>
+        <ul id="password-rules" class="rules"></ul>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Verification</h2>
+
+      <!-- 8. Robot -->
+      <div class="robot-box">
+        <label class="robot-label"><input id="robot-check" type="checkbox"> I'm not a robot</label>
+        <span id="robot-msg" class="robot-msg"></span>
+        <div class="robot-logo">🤖<small>NotCAPTCHA</small></div>
+      </div>
+
+      <!-- 9. Terms -->
+      <div class="field">
+        <label>Terms &amp; Conditions</label>
+        <div id="terms-box" class="terms-box"></div>
+        <label class="check-label disabled" id="terms-label"><input id="terms-check" type="checkbox" disabled> Uncheck this box if you do not wish to not agree.</label>
+      </div>
+    </section>
+
+    <!-- 10. Buttons -->
+    <section class="actions">
+      <button id="delete-btn" class="primary-btn" type="button">Delete Account</button>
+      <button id="save-btn" class="save-link" type="button">Save</button>
+    </section>
+
+    <p class="footnote muted">*Minute length may vary. Profilr™ is a fictional product. No data leaves your browser.</p>
+  </main>
+
+  <div id="dark-overlay" class="dark-overlay"></div>
+  <div id="cookie-layer"></div>
+  <div id="toasts" class="toasts"></div>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <h3 id="modal-title">Delete account?</h3>
+      <p id="modal-body">This will permanently delete your account.</p>
+      <div class="btn-row right">
+        <button id="modal-cancel" class="small-btn" type="button">Cancel</button>
+        <button id="modal-ok" class="primary-btn danger" type="button">Yes, delete</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
