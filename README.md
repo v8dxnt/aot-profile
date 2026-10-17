@@ -41,6 +41,7 @@ saved.html   "Error 418: Your profile is a teapot ☕" page (currently not linke
 style.css    Shared styles
 script.js    All features, one init function each, plus playSfx()
 *.mp3        Sound effects (vine boom, dry fart)
+PROMPT_LOG.md  Major prompts used to build it, verbatim
 ```
 
 ## Tech and constraints
@@ -52,7 +53,7 @@ script.js    All features, one init function each, plus playSfx()
 
 ## How we built it
 
-Agentic prompt engineering with Claude Code: one master prompt defined the pages, constraints and every feature, then short targeted prompts handled fixes and additions (sound effects, removing the untypable emoji password rule).
+Agentic prompt engineering with Claude Code: one master prompt defined the pages, constraints and every feature, then short targeted prompts handled fixes and additions (sound effects, removing the untypable emoji password rule, rage-gated save). Every major prompt is logged verbatim in [PROMPT_LOG.md](PROMPT_LOG.md).
 
 ## Disclaimer
 
