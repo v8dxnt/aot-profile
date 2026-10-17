@@ -30,14 +30,14 @@ _Add your demo video link here._
 | 9 | Infinite T&C | Scroll the terms box | Adds more text near the bottom 3 times before the checkbox enables. "Uncheck this box if you do not wish to not agree." |
 | 10 | Swapped buttons | Click "Delete Account" / chase "Save" | Delete is the big blue button (fake, harmless). Save is grey text that runs from the cursor 5 times, then "fine 🙄" |
 | 11 | Dark mode | Click "Dark mode" 5 times | Each click darkens 20%. At full black, it fades to blinding yellow after 3s. |
-| 12 | Error 418 | Save with robot check + T&C done | "Saving… estimated time: 3 years" stalls at 99%, then "Your profile is a teapot ☕. All changes discarded." OK returns to a fresh page. |
+| 12 | Rage-gated Save | Click Save | Refuses with "You're not angry enough to save yet 😌" (+5% rage each time) until the Rage-O-Meter hits 100%, then shows an "Account info saved ✅" popup. Nothing is actually stored. |
 | 🔊 | Sound effects | Click / type anywhere | Vine boom on every click, dry fart on every keystroke |
 
 ## File structure
 
 ```
-index.html   Profile editor (features 1–11)
-saved.html   Save result / Error 418 (feature 12)
+index.html   Profile editor (all features)
+saved.html   "Error 418: Your profile is a teapot ☕" page (currently not linked)
 style.css    Shared styles
 script.js    All features, one init function each, plus playSfx()
 *.mp3        Sound effects (vine boom, dry fart)

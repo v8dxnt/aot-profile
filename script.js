@@ -99,11 +99,14 @@ function fail(msg) {
   if (msg) toast(msg);
 }
 
-function openModal(title, body, okText, onOk) {
+// info = true shows a single, friendly OK button (no Cancel, not red).
+function openModal(title, body, okText, onOk, info) {
   const modal = $('modal');
   $('modal-title').textContent = title;
   $('modal-body').textContent = body;
   $('modal-ok').textContent = okText;
+  $('modal-ok').classList.toggle('danger', !info);
+  $('modal-cancel').classList.toggle('hidden', !!info);
   modal.classList.remove('hidden');
   const close = () => {
     modal.classList.add('hidden');
@@ -465,16 +468,24 @@ function initRunawaySave() {
     if (dodges >= MAX_DODGES) btn.textContent = 'Save (fine 🙄)';
   });
 
+  // Saving is only allowed once the user is maximally furious.
   btn.addEventListener('click', () => {
-    const missing = [];
-    if (!$('robot-check').checked) missing.push('prove you’re not a robot');
-    if (!$('terms-check').checked) missing.push('accept the Terms');
-    if (missing.length) {
-      fail('Please ' + missing.join(' and ') + ' first.');
+    if (rage < 100) {
+      addRage(5);
+      playSfx('error');
+      toast(rage < 100
+        ? 'You’re not angry enough to save yet 😌 Rage: ' + rage + '% / 100%'
+        : 'Rage maxed 💻🚀 NOW you may save.');
       return;
     }
     playSfx('saving');
-    location.href = 'saved.html?rage=' + rage;
+    openModal(
+      'Account info saved ✅',
+      'Your profile has been saved. It only took ' + rage + '% of your sanity.',
+      'OK 😊',
+      null,
+      true
+    );
   });
 }
 
